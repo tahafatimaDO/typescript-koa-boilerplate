@@ -2,7 +2,7 @@ import pino from 'pino';
 
 import KoaServer from './server/KoaServer';
 
-const logger: pino.Logger = pino() as pino.Logger;
+const logger: pino.Logger = pino();
 
 try {
   const koaServer = new KoaServer(logger);

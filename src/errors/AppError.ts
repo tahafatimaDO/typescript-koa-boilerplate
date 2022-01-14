@@ -10,10 +10,10 @@ export default class AppError extends Error {
     this.error = error;
   }
 
-  public toModel() {
+  public toModel(): { code: number; message: string } {
     return {
       code: this.code,
-      message: this.message
+      message: this.message,
     };
   }
 }

@@ -8,8 +8,7 @@ interface LogData {
   statusCode: number;
   timeMs: number;
 }
-export default (logger: Logger): IMiddleware => {
-  return async (ctx: Context, next: () => Promise<unknown>) => {
+export default (logger: Logger): IMiddleware => async (ctx: Context, next: () => Promise<unknown>) => {
     const start = Date.now();
 
     await next();
@@ -28,4 +27,3 @@ export default (logger: Logger): IMiddleware => {
       logger.info(message, logData);
     }
   };
-};

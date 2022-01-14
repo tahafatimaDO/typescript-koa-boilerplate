@@ -1,7 +1,3 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import cors from '@koa/cors';
 import { ErrorCallback, retry } from 'async';
 import { Server } from 'http';
@@ -30,7 +26,7 @@ export default class KoaServer {
   private healthMonitor: HealthMonitor;
 
   constructor(logger: pino.Logger) {
-    this.app = new Koa() as Koa;
+    this.app = new Koa();
     this.logger = logger;
     this.healthMonitor = new HealthMonitor();
   }

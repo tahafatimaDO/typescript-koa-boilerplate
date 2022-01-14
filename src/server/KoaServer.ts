@@ -30,7 +30,7 @@ export default class KoaServer {
   private healthMonitor: HealthMonitor;
 
   constructor(logger: pino.Logger) {
-    this.app = new Koa();
+    this.app = new Koa() as Koa;
     this.logger = logger;
     this.healthMonitor = new HealthMonitor();
   }

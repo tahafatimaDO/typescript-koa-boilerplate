@@ -1,7 +1,6 @@
 import cors from '@koa/cors';
 import { ErrorCallback, retry } from 'async';
 import { Server } from 'http';
-import ip from 'ip';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import helmet from 'koa-helmet';
@@ -17,7 +16,7 @@ import responseTime from './middleware/response-time';
 import health from './modules/health';
 
 export default class KoaServer {
-  private app: Koa;
+  private app: Koa<Koa.DefaultState, Koa.DefaultContext>;
 
   private server!: Server;
 
@@ -37,7 +36,7 @@ export default class KoaServer {
     this.registerProcessEvents();
     this.server = this.app.listen(config.port);
     this.logger.info(`HTTP KOA server running on port: ${config.port}`);
-    this.logger.info(`http://${ip.address()}:${config.port}/health`);
+    // this.logger.info(`http://${ip.address()}:${config.port}/health`);
     return this.server;
   }
 

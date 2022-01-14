@@ -4,4 +4,4 @@ docs
 dist
 dist/tsc
 .nyc_output
-
+.DS_Store

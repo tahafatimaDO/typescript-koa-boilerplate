@@ -1,5 +1,12 @@
-export function hello(): string {
-  return 'Hello World!';
-}
+import pino from 'pino';
 
-export default hello;
+import KoaServer from './server/KoaServer';
+
+const logger = pino();
+
+try {
+  const koaServer = new KoaServer(logger);
+  koaServer.listen();
+} catch (e) {
+  logger.error(e, 'An error occurred while initializing koa server.');
+}

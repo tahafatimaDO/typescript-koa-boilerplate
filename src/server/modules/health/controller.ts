@@ -9,10 +9,11 @@ export default class HealthController {
     this.health = health;
   }
 
-  public getHealth(ctx: Context) {
+  public getHealth(ctx: Context): void {
     const status = this.health.getStatus();
 
     ctx.body = status;
-    ctx.status = status.isShuttingDown ? 503 : 200;
+    const cc: boolean = status.isShuttingDown;
+    ctx.status = cc ? 503 : 200;
   }
 }

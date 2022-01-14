@@ -8,7 +8,7 @@ import Router from 'koa-router';
 import HealthMonitor from '../../../lib/HealthMonitor';
 import HealthController from './controller';
 
-export default (server: Koa, healthMonitor: HealthMonitor) => {
+export default (server: Koa, healthMonitor: HealthMonitor): void => {
   const controller = new HealthController(healthMonitor);
   const router: Router = new Router();
 

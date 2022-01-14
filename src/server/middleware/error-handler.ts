@@ -18,11 +18,11 @@ const httpCodes: { [key: string]: number } = {
 };
 
 export default (logger: Logger): IMiddleware =>
-  async (ctx: Context, next: () => Promise<unknown>) => {
+  async (ctx: Context, next: () => Promise<void>) => {
     try {
       await next();
-    } catch (err: unknown) {
-      logger.error(`Error Handler: ${err.message}`, err);
+    } catch (err) {
+      logger.error(`Error Handler: ${err}`, err);
       if (err instanceof AppError) {
         ctx.body = err.toModel();
         ctx.status = httpCodes[err.code.toString()]

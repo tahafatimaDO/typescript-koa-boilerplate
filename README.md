@@ -1,8 +1,8 @@
-# TypeScript Boilerplate
+# TypeScript KOA Boilerplate
 
-Basic boilerplate for Node.js development with TypeScript, ESLint, Prettier, Airbnb styleguide, Mocha, Chai, istanbul, tsc-watch
+Basic boilerplate for Node.js development with TypeScript, KOA, koa-router, koa-helmet, @koa/cors, koa-bodyparser, koa-requestid, ESLint, Prettier, Airbnb styleguide, Mocha, Chai, istanbul, tsc-watch, supertest, sinon.js, pino, tsc-watch
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/887c0ee5aa8549a9bb32b84b172e5f12)](https://www.codacy.com/gh/bitzr01/typescript-boilerplate/dashboard?utm_source=github.com&utm_medium=referral&utm_content=bitzr01/typescript-boilerplate&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9fb6893882b34716a0a7ad97eea21ac1)](https://www.codacy.com/gh/bitzr01/typescript-koa-boilerplate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bitzr01/typescript-koa-boilerplate&amp;utm_campaign=Badge_Grade)
 
 <!-- [![Build Status](https://travis-ci.com/alphabit1/nodejs-typescript-boilerplate.svg?branch=main)](https://travis-ci.com/alphabit1/nodejs-typescript-boilerplate) -->
 
@@ -12,6 +12,11 @@ Basic boilerplate for Node.js development with TypeScript, ESLint, Prettier, Air
 
 This boilerplate includes the following features:
 
+-   Koa HTTP server with [koa-router](https://github.com/ZijianHe/koa-router), [koa-helmet](https://github.com/venables/koa-helmet#readme), [@koa/cors](https://github.com/koajs/cors), [koa-bodyparser](https://github.com/koajs/bodyparser) and [koa-requestid](https://github.com/uphold/koa-requestid/),
+-   Error handling
+-   Health module
+-   Request logging with [pino](https://github.com/pinojs/pino)
+-   Response time header using [moment.js](https://momentjs.com/)
 -   Easy development with [tsc-watch](https://github.com/gilamran/tsc-watch#readme) and [pino-pretty](https://github.com/pinojs/pino-pretty)
 -   Linting with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) and.
 -   Formatting with [Prettier](https://prettier.io/) and [Airbnb styleguide](https://github.com/airbnb/javascript).

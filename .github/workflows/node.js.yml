@@ -29,8 +29,19 @@ jobs:
       - run: npm run clean
       - run: npm run build --if-present
       - run: npm test
-      - name: DigitalOcean App Platform deployment
-        uses: digitalocean/app_action@main
-        with:
-          app_name: typescript-koa-boilerplate
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: copy
+        env:
+          TARGET_BRANCH: 'deploy'
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git fetch                         # fetch branches
+          git checkout $TARGET_BRANCH       # checkout to your branch
+          git rm -rf .
+          git checkout master
+          git commit -m "deploy"
+      # - name: DigitalOcean App Platform deployment
+      #   uses: digitalocean/app_action@main
+      #   with:
+      #     app_name: typescript-koa-boilerplate
+      #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}

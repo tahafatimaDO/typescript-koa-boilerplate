@@ -9,6 +9,9 @@
     "boilerplate",
     "koa"
   ],
+  "engines" : {
+    "node" : ">=16.0.0"
+  },
   "main": "./dist/tsc/index.js",
   "types": "./dist/tsc/index.d.ts",
   "scripts": {

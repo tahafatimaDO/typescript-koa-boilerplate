@@ -1,12 +1,13 @@
-import pino from 'pino';
+// import pino from 'pino';
+console.log('aaa');
 
-import KoaServer from './server/KoaServer';
+// import KoaServer from './server/KoaServer';
 
-const logger: pino.Logger = pino();
+// const logger: pino.Logger = pino();
 
-try {
-  const koaServer = new KoaServer(logger);
-  koaServer.listen();
-} catch (e) {
-  logger.error(e, 'An error occurred while initializing koa server.');
-}
+// try {
+//   const koaServer = new KoaServer(logger);
+//   koaServer.listen();
+// } catch (e) {
+//   logger.error(e, 'An error occurred while initializing koa server.');
+// }

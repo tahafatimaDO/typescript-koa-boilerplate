@@ -12,12 +12,11 @@
   "main": "./dist/tsc/index.js",
   "types": "./dist/tsc/index.d.ts",
   "scripts": {
-    "dev": "tsc-watch --onSuccess 'node --inspect=0.0.0.0:5858 dist/tsc/index.js' | pino-pretty -t 'SYS:HH:MM:ss' -i hostname",
+    "dev": "tsc-watch --onSuccess 'node --inspect=0.0.0.0:5858 ./dist/tsc/index.js' | pino-pretty -t 'SYS:HH:MM:ss' -i hostname",
     "lint": "eslint src/ --fix --ext .js,.jsx,.ts,.tsx",
     "clean": "rm -rf dist docs coverage",
-    "docs": "typedoc --out docs src/index.ts",
     "build": "tsc",
-    "start": "node dist/tsc/index.js | pino-pretty -t 'SYS:HH:MM:ss' -i hostname",
+    "start": "node ./dist/tsc/index.js",
     "test": "mocha",
     "coverage": "nyc mocha"
   },

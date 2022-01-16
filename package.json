@@ -20,7 +20,6 @@
     "lint": "eslint src/ --fix --ext .js,.jsx,.ts,.tsx",
     "clean": "rm -rf dist docs coverage",
     "build": "tsc",
-    "start": "node ./dist/tsc/index.js",
     "test": "mocha",
     "coverage": "nyc mocha"
   },
